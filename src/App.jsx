@@ -1,33 +1,43 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
 
 function App() {
-  const [count, setCount] = useState(0)
+    const [todoList,setTodoList] = useState([])
+    const [todo,setTodo] = useState('')
+    
+  const submitForm = e=>{
+    e.preventDefault()
+    if(todo.trim() !== ''){
+      setTodoList([...todoList,{id:Date.now(),todo:todo,completed:false}])
+      setTodo('')
+    }
+  }
 
+  const toggleCompleted = toggleTd =>{
+    setTodoList(
+      todoList.map(td=>{
+        if(toggleTd.id == td.id){
+          return {...toggleTd,completed:!toggleTd.completed}
+        }
+        return td
+      })
+    )
+  }
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    <form onSubmit={submitForm} method="post">
+      <label htmlFor="todo"></label>
+      <input type="text" name="todo" id="" onChange={e=> setTodo(e.target.value)} value={todo}/>
+      <button type="submit">Add</button>
+    </form>
+    {
+      todoList.map(td=>{
+        return <div key={td?.id}>
+        <input type="checkbox" checked={td?.completed} onChange={()=>toggleCompleted(td)} />
+        <span style={{textDecoration: td.completed ? 'line-through' : 'none'}}>{td?.todo}</span>
+        </div>
+      })
+    }
+
     </>
   )
 }
