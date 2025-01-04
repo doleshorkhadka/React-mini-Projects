@@ -1,34 +1,73 @@
 /* App.css */
 body {
-    font-family: Arial, sans-serif;
-    background-color: grey;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .app-container {
-    background: rgb(151, 150, 150);
-    padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
-    margin: auto;
-  }
-  .title-bar{
-    text-align: center  ;
-    border-bottom: 2px solid grey;
-    color: rgb(69, 69, 69);
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-  }
+	font-family: Arial, sans-serif;
+	background-color: grey;
+	margin: 0;
+	padding: 0;
+}
 
-  .main-form{
-    background-color: aquamarine;
-    margin: auto;
-    display: flex;
-    align-items:baseline;
-    justify-content:flex-start;
-    flex-direction: column;
-    padding: 10px;
-  }
-  
+.app-container {
+	background: #fff;
+	padding: 20px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	width: 100%;
+	max-width: 500px;
+	margin: auto;
+}
+.title-bar {
+	text-align: center;
+	border-bottom: 2px solid grey;
+	color: rgb(69, 69, 69);
+	text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
 
+form {
+	margin: auto;
+	display: flex;
+	align-items: baseline;
+	justify-content: center;
+	align-items: center;
+	gap: 5px;
+	width: 100%;
+}
+
+.actions-container {
+	display: flex;
+	justify-content: space-around;
+}
+
+button {
+	padding: 10px;
+	font-weight: 700;
+	color: rgb(119, 111, 111);
+	border-radius: 3px;
+	border: 1px solid white;
+	text-align: center;
+	width: 30%;
+}
+
+button:active {
+	border: 1px solid grey;
+	transition: border-color 0.5s ease;
+}
+
+form input {
+	padding: 6px;
+	margin: 5px;
+	flex: 1;
+	border-radius: 3px;
+	border: 1px solid white;
+}
+form input::placeholder {
+	color: grey;
+}
+
+form input:focus {
+	border: 1px solid grey;
+	outline: none;
+	transition: border-color 0.2s ease;
+}
+
+.submit-btn {
+	padding: 5px;
+}
