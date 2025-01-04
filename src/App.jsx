@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import "./App.css";
 import Modal from "./modal";
 import axios from "axios";
