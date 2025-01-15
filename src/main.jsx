@@ -15,6 +15,7 @@ import Error404 from "./pages/404-error.tsx";
 import careersDataLoaders, { Careers } from "./pages/Careers/careers.tsx";
 import CareersLayout from "./Layouts/CareersLayout.tsx";
 import careerLoader, { Career } from "./pages/Careers/career/career.tsx";
+import CareerError from "./pages/Careers/career/careerError.tsx";
 
 const router = createBrowserRouter(
 	createRoutesFromElements(
@@ -25,7 +26,12 @@ const router = createBrowserRouter(
 
 			<Route path="careers" element={<CareersLayout />}>
 				<Route index loader={careersDataLoaders} element={<Careers />} />
-				<Route path=":id" loader={careerLoader} element={<Career />} />
+				<Route
+					path=":id"
+					loader={careerLoader}
+					element={<Career />}
+					errorElement={<CareerError />}
+				/>
 			</Route>
 			<Route path="contact" element={<ContactUs />} />
 			<Route path="*" element={<Error404 />} />
