@@ -1,0 +1,18 @@
+.breadcrumbs {
+	margin: 10px;
+}
+
+.breadcrumbs .crumb {
+	color: white;
+	text-decoration: none;
+	margin-right: 10px;
+}
+
+.breadcrumbs .crumb:after {
+	content: ">";
+	padding-left: 10px;
+}
+
+.breadcrumbs .crumb:last-child:after {
+	content: none;
+}

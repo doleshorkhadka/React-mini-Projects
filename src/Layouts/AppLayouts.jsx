@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink, Outlet } from "react-router";
 import "./AppLayouts.css";
+import Breadcrumbs from "../pages/breadcrumbs";
 
 const AppLayouts = () => {
 	const navLinks = [
@@ -42,6 +43,7 @@ const AppLayouts = () => {
 						))}
 					</div>
 				</nav>
+				<Breadcrumbs />
 			</header>
 			<main>
 				<Outlet />
