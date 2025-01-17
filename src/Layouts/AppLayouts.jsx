@@ -10,6 +10,10 @@ const AppLayouts = () => {
 			path: "/",
 		},
 		{
+			name: "User",
+			path: "/user",
+		},
+		{
 			name: "About",
 			path: "/about",
 		},

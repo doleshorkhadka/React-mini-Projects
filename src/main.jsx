@@ -16,6 +16,7 @@ import CareersLayout from "./Layouts/CareersLayout.tsx";
 import careerLoader, { Career } from "./pages/Careers/career/career.tsx";
 import CareerError from "./pages/Careers/career/careerError.tsx";
 import contactUsAction, { ContactUs } from "./pages/contact-us.tsx";
+import UserProfileEditor from "./pages/UserProfile.tsx";
 
 const router = createBrowserRouter(
 	createRoutesFromElements(
@@ -23,6 +24,7 @@ const router = createBrowserRouter(
 			<Route index element={<App />} />
 			<Route path="about" element={<About />} />
 			<Route path="help" element={<Help />} />
+			<Route path="user" element={<UserProfileEditor />} />
 			<Route
 				path="careers"
 				element={<CareersLayout />}
